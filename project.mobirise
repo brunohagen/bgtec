@@ -51,7 +51,7 @@
     "siteUrl": false,
     "cookiesAlert": false,
     "gdpr": false,
-    "uniqCompNum": 19,
+    "uniqCompNum": 23,
     "versionPublish": "5.3.0",
     "screenshot": "screenshot.png",
     "publishChangesOnly": false
@@ -835,112 +835,79 @@
         {
           "alias": false,
           "_styles": {
-            "padding-top": "(@paddingTop * 15px)",
-            "padding-bottom": "(@paddingBottom * 15px)",
-            "& when (@bg-type = \"image\")": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = 'image')": {
               "background-image": "url(@bg-value)"
             },
-            "& when (@bg-type = \"color\")": {
+            "& when (@bg-type = 'color')": {
               "background-color": "@bg-value"
             },
-            ".content": {
-              "@media (max-width: 767px)": {
+            ".media-wrap": {
+              "padding": "0",
+              "@media (max-width: 991px)": {
+                "margin-bottom": "1rem"
+              }
+            },
+            "@media (max-width: 767px)": {
+              ".row": {
                 "text-align": "center",
-                "> div:not(:last-child)": {
-                  "margin-bottom": "2rem"
-                }
-              }
-            },
-            ".map": {
-              "height": "18.75rem"
-            },
-            ".footer-lower": {
-              ".copyright": {
-                "@media (max-width: 767px)": {
-                  "margin-bottom": "1rem",
-                  "text-align": "center"
+                "& > div": {
+                  "margin": "auto"
                 }
               },
-              "hr": {
-                "margin": "1rem 0",
-                "border-color": "#fff",
-                "opacity": "0.05"
-              }
-            },
-            ".google-map": {
-              "height": "25rem",
-              "position": "relative",
-              "iframe": {
-                "height": "100%",
-                "width": "100%"
-              },
-              "[data-state-details]": {
-                "color": "#6b6763",
-                "font-family": "Montserrat",
-                "height": "1.5em",
-                "margin-top": "-0.75em",
-                "padding-left": "1.25rem",
-                "padding-right": "1.25rem",
-                "position": "absolute",
-                "text-align": "center",
-                "top": "50%",
-                "width": "100%"
-              },
-              "&[data-state]": {
-                "background": "#e9e5dc"
-              },
-              "&[data-state=\"loading\"]": {
-                "[data-state-details]": {
-                  "display": "none"
-                },
-                "&::after": {}
-              }
-            },
-            ".social-list": {
-              "padding-left": "0",
-              "margin-bottom": "0",
-              "margin-left": "-7px",
-              "list-style": "none",
-              "display": "flex",
-              "-webkit-justify-content": "flex-start",
-              "justify-content": "flex-start",
-              "-webkit-flex-wrap": "wrap",
-              "flex-wrap": "wrap",
-              ".mbr-iconfont-social": {
-                "font-size": "1.3rem",
-                "color": "#fff"
-              },
-              ".soc-item": {
-                "margin": "0 0.5rem"
-              },
-              "a": {
-                "margin": "0",
-                "opacity": "0.5",
-                "-webkit-transition": "0.2s linear",
-                "transition": "0.2s linear",
-                "&:hover": {
-                  "opacity": "1"
-                }
-              },
-              "@media (max-width: 767px)": {
-                "-webkit-justify-content": "center",
+              ".social-row": {
                 "justify-content": "center"
               }
             },
+            ".social-row": {
+              "display": "flex",
+              "flex-wrap": "wrap"
+            },
             ".list": {
-              "list-style-type": "none",
-              "padding": "0"
+              "list-style": "none",
+              "padding-left": "0",
+              "@media (max-width: 991px)": {
+                "margin-bottom": "2rem"
+              },
+              "@media (min-width: 992px)": {
+                "margin-bottom": "0rem"
+              },
+              "color": "#bbbbbb"
+            },
+            ".mbr-text": {
+              "color": "#bbbbbb"
+            },
+            ".soc-item": {
+              "display": "flex",
+              "align-items": "center",
+              "justify-content": "center",
+              "border-radius": "50%",
+              "background-color": "white",
+              "margin-right": "0.5rem",
+              "margin-bottom": "1rem",
+              "padding": "0.5rem",
+              "height": "2.5rem",
+              "width": "2.5rem"
+            },
+            ".mbr-iconfont": {
+              "color": "black"
+            },
+            "@media (max-width: 991px)": {
+              "div > *:last-child": {
+                "margin-top": "0 !important"
+              }
             }
           },
-          "_name": "footer6",
+          "_name": "footer4",
           "_sourceTheme": "mobirise5",
-          "_customHTML": "<section class=\"footer6\" group=\"Footers\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\" global once=\"footers\">\n\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"8\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"8\">\n        <input type=\"map\" title=\"Map\" name=\"googleMap\" place-id=\"R. Tuparaí, 170 - Passo d'AreiaPorto Alegre - RS, 91030-100\" value=\"R. Tuparaí, 170 - Passo d'AreiaPorto Alegre - RS, 91030-100\">\n        <input type=\"checkbox\" title=\"Show Copyright\" name=\"showCopyright\" checked>\n        <select title=\"Icons\" name=\"iconsCount\">\n            <option value=\"0\">0</option>\n            <option value=\"1\">1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\">3</option>\n            <option value=\"4\">4</option>\n            <option value=\"5\">5</option>\n            <option value=\"6\" selected>6</option>\n        </select>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/mbr-7.jpg\" selected>\n            <input type=\"color\" title=\"Background Color\" value=\"#232323\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#232323\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.9\" condition=\"overlay && bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div class=\"container\">\n        <div class=\"row content mbr-white\">\n            <div class=\"col-12 col-md-3 mbr-fonts-style\" mbr-theme-style=\"display-7\">\n                <h5 class=\"mbr-section-subtitle mbr-fonts-style mb-2\" mbr-theme-style=\"display-7\">\n                    <b>Address</b>\n                </h5>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\">\n                    1234 Street Name <br>\n                    City, AA 99999\n                </p> <br>\n                <h5 class=\"mbr-section-subtitle mbr-fonts-style mb-2 mt-4\" mbr-theme-style=\"display-7\">\n                    <b>Contacts</b>\n                </h5>\n                <p class=\"mbr-text mbr-fonts-style mb-4\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\">\n                    Email: support@mobirise.com <br>\n                    Phone: +1 (0) 000 0000 001 <br>\n                    Fax: +1 (0) 000 0000 002\n                </p>\n            </div>\n            <div class=\"col-12 col-md-3 mbr-fonts-style\" mbr-theme-style=\"display-7\">\n                <h5 class=\"mbr-section-subtitle mbr-fonts-style mb-2\" mbr-theme-style=\"display-7\">\n                    <b>Links</b>\n                </h5>\n                <ul class=\"list mbr-fonts-style mb-4\" mbr-theme-style=\"display-4\" data-app-selector=\".list\" data-multiline mbr-article>\n                    <li class=\"mbr-text item-wrap\">\n                        <a class=\"text-primary\" href=\"https://mobirise.co/\">Website builder</a>\n                    </li>\n                    <li class=\"mbr-text item-wrap\">\n                        <a class=\"text-primary\" href=\"https://mobirise.co/\">Download for Windows</a>\n                    </li>\n                    <li class=\"mbr-text item-wrap\">\n                        <a class=\"text-primary\" href=\"https://mobirise.co/\">Download for Mac</a>\n                    </li>\n                </ul>\n                <h5 class=\"mbr-section-subtitle mbr-fonts-style mb-2 mt-5\" mbr-theme-style=\"display-7\">\n                    <b>Feedback</b>\n                </h5>\n                <p class=\"mbr-text mbr-fonts-style mb-4\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\">\n                    Please send us your ideas, bug reports, suggestions! Any feedback would be appreciated.\n                </p>\n            </div>\n            <div class=\"col-12 col-md-6\">\n                <div class=\"google-map\" mbr-map=\"googleMap\"></div>\n            </div>\n            <div class=\"col-md-6\">\n                <div class=\"social-list align-left\" mbr-if=\"iconsCount > 0\">\n                    <div class=\"soc-item\" mbr-if=\"iconsCount>0\">\n                        <a href=\"https://twitter.com/mobirise\" target=\"_blank\">\n                            <span mbr-icon class=\"socicon-twitter socicon mbr-iconfont mbr-iconfont-social\"></span>\n                        </a>\n                    </div>\n                    <div class=\"soc-item\" mbr-if=\"iconsCount>1\">\n                        <a href=\"https://www.facebook.com/pages/Mobirise/1616226671953247\" target=\"_blank\">\n                            <span mbr-icon class=\"socicon-facebook socicon mbr-iconfont mbr-iconfont-social\"></span>\n                        </a>\n                    </div>\n                    <div class=\"soc-item\" mbr-if=\"iconsCount>2\">\n                        <a href=\"https://www.youtube.com/c/mobirise\" target=\"_blank\">\n                            <span mbr-icon class=\"socicon-youtube socicon mbr-iconfont mbr-iconfont-social\"></span>\n                        </a>\n                    </div>\n                    <div class=\"soc-item\" mbr-if=\"iconsCount>3\">\n                        <a href=\"https://instagram.com/mobirise\" target=\"_blank\">\n                            <span mbr-icon class=\"socicon-instagram socicon mbr-iconfont mbr-iconfont-social\"></span>\n                        </a>\n                    </div>\n                    <div class=\"soc-item\" mbr-if=\"iconsCount>4\">\n                        <a href=\"https://plus.google.com/u/0/+Mobirise\" target=\"_blank\">\n                            <span mbr-icon class=\"socicon-googleplus socicon mbr-iconfont mbr-iconfont-social\"></span>\n                        </a>\n                    </div>\n                    <div class=\"soc-item\" mbr-if=\"iconsCount>5\">\n                        <a href=\"https://www.behance.net/Mobirise\" target=\"_blank\">\n                            <span mbr-icon class=\"socicon-behance socicon mbr-iconfont mbr-iconfont-social\"></span>\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"footer-lower\" mbr-if=\"showCopyright\">\n            <div class=\"media-container-row\">\n                <div class=\"col-sm-12\">\n                    <hr>\n                </div>\n            </div>\n            <div class=\"col-sm-12 copyright pl-0\">\n                <p class=\"mbr-text mbr-fonts-style mbr-white\" mbr-theme-style=\"display-7\" data-app-selector=\".copyright > p\">\n                    © Copyright 2021 BGTec - Todos direitos reservados</p>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "ssBrsOzWWL",
-          "_anchor": "footer6-g",
+          "_customHTML": "<section class=\"footer4\" group=\"Footers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" global once=\"footers\" mbr-class=\"{\n    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"10\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"10\">\n        <input type=\"range\" inline title=\"Logo Size\" name=\"logoSize\" min=\"1\" max=\"3\" step=\"1\" value=\"2\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Social\" name=\"showSocial\">\n        <input type=\"range\" name=\"socialCount\" title=\"Social Count\" min=\"1\" max=\"4\" step=\"1\" value=\"3\" condition=\"showSocial\">\n        <input type=\"checkbox\" title=\"Copyright\" name=\"showCopyright\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/background8.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#232323\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#232323\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row mbr-white\">\n            <div class=\"col-6 col-lg-3\">\n                <div class=\"media-wrap col-md-{{4*logoSize}} col-12\">\n                    <a href=\"https://mobiri.se/\">\n                        <img src=\"../_images/logo.png\" alt=\"Mobirise\">\n                    </a>\n                </div>\n            </div>\n            <div class=\"col-12 col-md-6 col-lg-3\">\n                <h5 class=\"mbr-section-subtitle mbr-fonts-style mb-2\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\">\n                    <b>About</b>\n                </h5>\n                <p class=\"mbr-text mbr-fonts-style mb-4\" mbr-theme-style=\"display-4\" data-app-selector=\".mbr-text\">\n                    Mobirise is a free offline app for\n                    Windows and Mac to easily create small/medium websites, landing pages, online resumes and\n                    portfolios.</p>\n                <h5 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-section-subtitle\" mbr-if=\"showTitle && showSocial\">\n                    <b>Follow Us</b>\n                </h5>\n                <div class=\"social-row display-7\" mbr-if=\"showSocial\">\n                    <div class=\"soc-item\">\n                        <a href=\"https://twitter.com/mobirise\" target=\"_blank\">\n                            <span mbr-icon class=\"mbr-iconfont socicon socicon-facebook\"></span>\n                        </a>\n                    </div>\n                    <div class=\"soc-item\" mbr-if=\"socialCount>1\">\n                        <a href=\"https://twitter.com/mobirise\" target=\"_blank\">\n                            <span mbr-icon class=\"mbr-iconfont socicon socicon-twitter\"></span>\n                        </a>\n                    </div>\n                    <div class=\"soc-item\" mbr-if=\"socialCount>2\">\n                        <a href=\"https://twitter.com/mobirise\" target=\"_blank\">\n                            <span mbr-icon class=\"mbr-iconfont socicon socicon-instagram\"></span>\n                        </a>\n                    </div>\n                    <div class=\"soc-item\" mbr-if=\"socialCount>3\">\n                        <a href=\"https://twitter.com/mobirise\" target=\"_blank\">\n                            <span mbr-icon class=\"mbr-iconfont socicon socicon-instagram\"></span>\n                        </a>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 col-md-6 col-lg-3\">\n                <h5 mbr-text class=\"mbr-section-subtitle mbr-fonts-style mb-2\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\">\n                    <b>Mobirise Help</b>\n                </h5>\n                <ul class=\"list mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".list\" data-multiline mbr-article>\n                    <li class=\"mbr-text item-wrap\">Help Center</li>\n                    <li class=\"mbr-text item-wrap\">Mobirise Forums</li>\n                    <li class=\"mbr-text item-wrap\">Mobirise Kit</li>\n                    <li class=\"mbr-text item-wrap\">Our site</li>\n                </ul>\n            </div>\n            <div class=\"col-12 col-md-6 col-lg-3\">\n                <h5 mbr-text class=\"mbr-section-subtitle mbr-fonts-style mb-2\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\">\n                    <b>Mobirise Extensions</b>\n                </h5>\n                <ul class=\"list mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".list\" data-multiline mbr-article>\n                    <li class=\"mbr-text item-wrap\">Code Editor</li>\n                    <li class=\"mbr-text item-wrap\">Form Builder</li>\n                    <li class=\"mbr-text item-wrap\">Popup Builder</li>\n                    <li class=\"mbr-text item-wrap\">Enterprise</li>\n                </ul>\n            </div>\n            <div class=\"col-12 mt-4\" mbr-if=\"showCopyright\">\n                <p class=\"mbr-text mb-0 mbr-fonts-style copyright align-center\" mbr-theme-style=\"display-7\" data-app-selector=\".copyright\" data-app-placeholder=\"Type Text\">\n                    © Copyright 2025 Mobirise - All Rights Reserved\n                </p>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "suH980jFAi",
           "_protectedParams": [],
           "_global": true,
           "_once": "footers",
-          "_params": {}
+          "_params": {},
+          "_anchor": "footer4-k"
         }
       ]
     }
