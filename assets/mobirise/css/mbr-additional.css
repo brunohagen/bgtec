@@ -1041,9 +1041,9 @@ a {
   }
 }
 .cid-ssqAFBhP4k {
-  padding-top: 10rem;
-  padding-bottom: 10rem;
-  background-image: url("../../../assets/images/mbr-3.jpg");
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: #353535;
 }
 .cid-ssqAFBhP4k .item {
   padding-bottom: 2rem;
@@ -1300,9 +1300,9 @@ a {
   color: #e6c63b;
 }
 .cid-ssqAKyvFtf {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  background-image: url("../../../assets/images/mbr-1.jpg");
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background: #232323;
 }
 .cid-ssqAKyvFtf .team-card {
   margin-bottom: 2rem;
@@ -1364,9 +1364,9 @@ a {
   color: #e6c63b;
 }
 .cid-ssBrsOzWWL {
-  padding-top: 120px;
-  padding-bottom: 120px;
-  background-image: url("../../../assets/images/mbr-7.jpg");
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #353535;
 }
 @media (max-width: 767px) {
   .cid-ssBrsOzWWL .content {
